@@ -1,0 +1,362 @@
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3, .card-header .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    background: var(--background);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.menu-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+    animation: fadeInUp 0.4s ease forwards;
+    opacity: 0;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.menu-card .card-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.menu-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.menu-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.menu-card .card-image .badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--card);
+    color: var(--secondary);
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-card .card-image .badge.available {
+    background: var(--success);
+    color: white;
+}
+
+.menu-card .card-image .badge.unavailable {
+    background: var(--danger);
+    color: white;
+}
+
+.menu-card .card-content {
+    padding: 18px 20px;
+}
+
+.menu-card .card-content .card-category {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.menu-card .card-content .card-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 8px;
+}
+
+.menu-card .card-content .card-description {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu-card .card-content .card-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-card .card-content .card-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.menu-card .card-content .card-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: var(--warning);
+    font-weight: 500;
+}
+
+.menu-card .card-content .card-rating svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--warning);
+    stroke: var(--warning);
+}
+
+.menu-card .card-actions {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px 18px;
+    border-top: 1px solid var(--border);
+}
+
+.reservation-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 20px;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary);
+}
+
+.reservation-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.reservation-card.confirmed {
+    border-left-color: var(--success);
+}
+
+.reservation-card.pending {
+    border-left-color: var(--warning);
+}
+
+.reservation-card.cancelled {
+    border-left-color: var(--danger);
+}
+
+.reservation-card .reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.reservation-card .reservation-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.reservation-card .reservation-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.reservation-card .reservation-details span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reservation-card .reservation-details svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--text-light);
+}
+
+.employee-card, .customer-card, .inventory-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 24px;
+    transition: var(--transition);
+    text-align: center;
+    animation: fadeInUp 0.4s ease forwards;
+    opacity: 0;
+}
+
+.employee-card:hover, .customer-card:hover, .inventory-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.employee-card .avatar, .customer-card .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    object-fit: cover;
+    background: var(--secondary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    overflow: hidden;
+}
+
+.employee-card .avatar img, .customer-card .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.employee-card h4, .customer-card h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 4px;
+}
+
+.employee-card .role, .customer-card .info {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.employee-card .badge, .customer-card .badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.badge-active {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.badge-inactive {
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+.badge-pending {
+    background: var(--warning-light);
+    color: #b8860b;
+}
+
+.inventory-card .stock-info {
+    margin: 16px 0;
+}
+
+.inventory-card .stock-info .stock-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.inventory-card .stock-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.inventory-card .stock-bar .fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inventory-card .stock-bar .fill.high {
+    background: var(--success);
+}
+
+.inventory-card .stock-bar .fill.medium {
+    background: var(--warning);
+}
+
+.inventory-card .stock-bar .fill.low {
+    background: var(--danger);
+}
+
+.customer-grid,
+.employee-grid,
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-grid,
+    .employee-grid,
+    .inventory-grid {
+        grid-template-columns: 1fr;
+    }
+}
